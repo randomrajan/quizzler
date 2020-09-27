@@ -31,8 +31,25 @@ class QuizBrain
     return _questionbank[_questionNumber].questiontext;
   }
 
+
+
   bool getCorrectAnswer()
   {
     return _questionbank[_questionNumber].questionanswer;
+  }
+
+  bool isFinished()
+  {
+    if (_questionNumber >= _questionbank.length - 1) {
+      print('Now returning true');
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+  void reset()
+  {
+    _questionNumber = 0;
   }
 }
